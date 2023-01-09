@@ -26,7 +26,7 @@ export const ProductCategories = [
 ]
 
 
-export const FlatListData = [
+export const productListData = [
 
     {
         id: 1,

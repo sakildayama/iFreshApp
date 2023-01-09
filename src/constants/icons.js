@@ -84,4 +84,5 @@ export default {
   Springonions:require('../assest/Images/Springonions.png'),
   Onion:require('../assest/Images/Onion.png'),
   CARTLOGOIMAGE:require('../assest/Images/CARTLOGOIMAGE.png'),
+  cross:require('../assest/Images/cross.png'),
 }

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image,Share } from 'react-native'
 import React from 'react'
 import ViewContainer from './ViewContainer'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import icons from '../../constants/icons'
 import colors from '../../constants/colors'
 import Paragraph from '../UI/Paragraph'
@@ -29,15 +29,15 @@ const CustomDrawerContent = ({navigation }) => {
   return (
     <ViewContainer>
       <ScrollView>
-        <View style={styles.ifresh_Drawar_main_view}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Login')} style={styles.ifresh_Drawar_main_view}>
           <View style={styles.ifresh_Top_view}>
             <Image style={styles.ifresh_logo_view} source={icons.iFreshLogo} />
             <Paragraph size={35} color={'white'}>iƑɾҽʂհ</Paragraph>
             <Paragraph size={25} color={'white'}>Login?</Paragraph>
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={styles.IconContainer}>
-          <Clickable  style={styles.ALL_icons_Image} onPress={() =>navigation.toggleDrawer('Home')}>
+          <Clickable  style={styles.ALL_icons_Image} onPress={() =>navigation.navigate('TabNavigator',{screen:"Home"})}>
             <Image style={styles.Home_Image} source={icons.home} />
             <View>
               <Paragraph style={styles.TEXTICONS}>Home</Paragraph>
@@ -47,7 +47,7 @@ const CustomDrawerContent = ({navigation }) => {
             <Image style={styles.Home_Image} source={icons.cart} />
             <Paragraph style={styles.TEXTICONS}>Cart</Paragraph>
           </Clickable >
-          <Clickable onPress={() =>navigation.navigate('Notification')}  style={styles.ALL_icons_Image}>
+          <Clickable onPress={() =>navigation.navigate('ProductList1')}  style={styles.ALL_icons_Image}>
             <Image style={styles.Home_Image} source={icons.notification} />
             <Paragraph style={styles.TEXTICONS}>Notification</Paragraph>
           </Clickable >

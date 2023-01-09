@@ -11,12 +11,12 @@ import Swiper from 'react-native-swiper';
 import Clickable from '../../components/HOC/Clickable'
 const Home = ({navigation}) => {
   return (
-    <ViewContainer style={{ flex: 1, backgroundColor: colors.WHITE }}>
+    <ViewContainer style={{flexGrow:1, backgroundColor: colors.WHITE }}>
       <FocusAwareStatusBar backgroundColor={'#0AB252'} />
         <View style={styles.TextImageVIEW}>
-          <TouchableOpacity onPress={() =>navigation.toggleDrawer()}>
+          <Clickable onPress={() =>navigation.toggleDrawer()}>
             <Image source={icons.menu} style={styles.Image_manu} />
-          </TouchableOpacity>
+          </Clickable>
           <Paragraph size={80} style={styles.iFresh_TEXT}>iƑɾҽʂհ</Paragraph>
           <Clickable  onPress={()=>navigation.navigate('Cart')}>
          <Image style={styles.CartImage} source={icons.cart} />
@@ -83,6 +83,7 @@ const Home = ({navigation}) => {
         </Card>
       </ScrollContainer>
     </ViewContainer>
+    
   )
 }
 
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
   iFresh_TEXT: {
     fontSize: 25,
     marginRight:150,
-    color: "white",                 // firoz
-    fontWeight: 'bold',         // firoz
+    color: "white",               
+    fontWeight: 'bold',         
   },
   location_DeleverTrxt: {
     flexDirection: 'row',

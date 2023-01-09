@@ -32,7 +32,7 @@ const Refer_Earn = ({navigation}) => {
     <ViewContainer style={{ flex: 1, backgroundColor: colors.WHITE }}>
     <FocusAwareStatusBar backgroundColor={'#0AB252'} />
       <View style={styles.TextImageVIEW}>
-      <Clickable onPress={() =>navigation.toggleDrawer('Home')}> 
+      <Clickable onPress={() =>navigation.navigate('Home')}> 
         <Image style={styles.CartImage} source={icons.leftarrow} />
        </Clickable>
         <Paragraph size={80} style={styles.iFresh_TEXT}>Refer Earn</Paragraph>
@@ -46,7 +46,7 @@ const Refer_Earn = ({navigation}) => {
         style={styles.backgroundVideo}
         controls={true}
         volume={100}
-        muted={true}
+        muted={false}
         onload={onloadEnd}
         onloadStart={onloadStart}
         onProgress={onProgress}

@@ -9,26 +9,26 @@ import Clickable from '../../components/HOC/Clickable'
 import ScrollContainer from '../../components/HOC/ScrollContainer'
 // import { ProductListData } from '../../constants/datas'
 import ProductCard from '../../components/UI/ProductCard'
-import { ProductCategories, FlatListData } from '../../constants/datas'
+import { ProductCategories, productListData } from '../../constants/datas'
 const ProductList = ({ navigation }) => {
-  const [productListData, setProductListData] = useState(FlatListData)
+  const [ProductListData, setProductListData] = useState(productListData)
   const [activeCategory, setActiveCategory] = useState("All Category")
 
   const changecategory = (category) => {
     if (category == 'All Category') {
-      setProductListData(FlatListData);
+      setProductListData(productListData);
     } else if (category == 'Vegetables') {
-      let filter_Product = FlatListData.filter((data) => {
+      let filter_Product = productListData.filter((data) => {
         return data.category == category
       })
       setProductListData(filter_Product);
     } else if (category == 'Fruits') {
-      let filter_Product = FlatListData.filter((data) => {
+      let filter_Product = productListData.filter((data) => {
         return data.category == category
       })
       setProductListData(filter_Product);
     } else if (category == 'Exotic') {
-      let filter_Product = FlatListData.filter((data) => {
+      let filter_Product = productListData.filter((data) => {
         return data.category == category
       })
       setProductListData(filter_Product);
@@ -56,7 +56,10 @@ const ProductList = ({ navigation }) => {
         <Paragraph size={23} style={{ color: "white", }}>ProductList</Paragraph>
         <Image style={styles.CartImage} source={icons.search} />
         <Image style={styles.CartImage} source={icons.filter} />
+        <TouchableOpacity onPress={()=>navigation.navigate("Cart")}>
+
         <Image style={styles.CartImage} source={icons.cart} />
+        </TouchableOpacity>
       </View>
       <ScrollContainer>
         <FlatList
@@ -69,7 +72,7 @@ const ProductList = ({ navigation }) => {
       <ViewContainer style={{ flex: 1, backgroundColor: colors.WHITE }}>
         <FocusAwareStatusBar backgroundColor={'#0AB252'} />
         <FlatList
-          data={productListData}
+          data={ProductListData}
           renderItem={({ item, index }) => <ProductCard item={item} key={index} />}
           contentContainerStyle={{ marginTop: 10, width: "100%", padding: 5 }}
         />
